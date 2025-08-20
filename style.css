@@ -1,0 +1,232 @@
+/* -- Import Font dari Google Fonts -- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@700&display=swap');
+
+/* -- Variabel Warna (agar mudah diubah) -- */
+:root {
+    --primary-color: #004d40;  /* Hijau Tua */
+    --secondary-color: #00796b; /* Hijau Terang */
+    --background-color: #f5f5f5; /* Abu-abu Sangat Muda */
+    --text-color: #333333; /* Abu-abu Tua */
+    --card-bg-color: #ffffff; /* Putih */
+    --header-font: 'Merriweather', serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+/* -- Reset Dasar & Gaya Global -- */
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* -- Header & Navigasi -- */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-family: var(--header-font);
+    text-align: center;
+    margin: 0;
+}
+
+header p {
+    text-align: center;
+    margin: 5px 0 20px 0;
+    opacity: 0.9;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Menggunakan Flexbox untuk navigasi */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+header nav a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* -- Gaya untuk Konten Utama -- */
+main .container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* -- Seksi Hero -- */
+#hero {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+#hero h2 {
+    font-family: var(--header-font);
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+/* -- Seksi Berita Terkini (Menggunakan CSS Grid) -- */
+#berita-terkini h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: var(--header-font);
+}
+
+.berita-container {
+    display: grid;
+    /* 3 kolom di layar besar, 1 kolom di layar kecil */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+#berita-terkini article {
+    background-color: var(--card-bg-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#berita-terkini article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+#berita-terkini h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+#berita-terkini a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* -- Seksi Lainnya & Footer -- */
+#profil-singkat {
+    background-color: var(--card-bg-color);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* -- Responsive Design -- */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #hero h2 {
+        font-size: 2em;
+    }
+}
+
+/* Di dalam file style.css */
+
+/* === DARK MODE STYLES === */
+/* Kelas ini akan ditambahkan oleh JavaScript */
+body.dark-mode {
+    --primary-color: #00796b;
+    --secondary-color: #004d40;
+    --background-color: #1a202c; /* Latar jadi gelap */
+    --text-color: #edf2f7;      /* Teks jadi terang */
+    --card-bg-color: #2d3748;    /* Warna kartu jadi gelap */
+}
+
+body.dark-mode header {
+    background-color: #2d3748;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+body.dark-mode #berita-terkini article {
+    border-color: #4a5568;
+}
+
+body.dark-mode #profil-singkat {
+    background-color: #2d3748;
+}
+
+/* Sedikit styling untuk tombol toggle */
+#mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Di dalam file style.css, di bagian bawah */
+
+/* === GAYA APARATUR DESA === */
+.aparatur-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.aparatur-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .aparatur-card {
+    border-color: #4a5568;
+}
+
+.aparatur-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.aparatur-card p {
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+    word-wrap: break-word; /* Agar email tidak keluar dari kotak */
+}
